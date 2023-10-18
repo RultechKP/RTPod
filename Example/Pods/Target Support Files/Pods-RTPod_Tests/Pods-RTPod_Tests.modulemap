@@ -1,0 +1,6 @@
+framework module Pods_RTPod_Tests {
+  umbrella header "Pods-RTPod_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

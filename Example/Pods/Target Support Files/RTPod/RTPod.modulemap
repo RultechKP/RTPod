@@ -1,0 +1,6 @@
+framework module RTPod {
+  umbrella header "RTPod-umbrella.h"
+
+  export *
+  module * { export * }
+}

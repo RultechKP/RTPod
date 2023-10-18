@@ -1,0 +1,6 @@
+framework module Pods_RTPod_Example {
+  umbrella header "Pods-RTPod_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

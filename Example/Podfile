@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'RTPod_Example' do
+  pod 'RTPod', :path => '../'
+
+  target 'RTPod_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

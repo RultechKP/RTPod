@@ -1,0 +1,27 @@
+{
+  "name": "RTPod",
+  "version": "0.1.0",
+  "summary": "Rultech own pod library",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/RultechKP/RTPod",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "RultechKP": "krutika.patel@rultech.com"
+  },
+  "source": {
+    "git": "https://github.com/RultechKP/RTPod.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "RTPod/Classes/**/*",
+  "resource_bundles": {
+    "Resources": [
+      "RTPod/Assets/star.png"
+    ]
+  }
+}
