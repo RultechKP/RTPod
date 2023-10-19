@@ -4,7 +4,7 @@ platform :ios, '10.0'
 
 target 'RTPod_Example' do
   pod 'RTPod', :path => '../'
-
+  pod 'Alamofire'
   target 'RTPod_Tests' do
     inherit! :search_paths
 

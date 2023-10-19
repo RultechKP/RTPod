@@ -1,16 +1,28 @@
 PODS:
-  - RTPod (0.1.0)
+  - Alamofire (5.8.0)
+  - RTPod (0.1.0):
+    - Alamofire (~> 5.8.0)
+    - Toast-Swift (~> 5.0.1)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
+  - Alamofire
   - RTPod (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Toast-Swift
 
 EXTERNAL SOURCES:
   RTPod:
     :path: "../"
 
 SPEC CHECKSUMS:
-  RTPod: 869c96d2d2d42436f4f0db473588511e5f5936f1
+  Alamofire: 0e92e751b3e9e66d7982db43919d01f313b8eb91
+  RTPod: 0d35d40d72571543d708320276bffd0998ab07af
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: dc7badf03d6d208d85c889758c18cd5ed37c99f3
+PODFILE CHECKSUM: da7b6c09a473f9263572b2d24c323f34a171822b
 
 COCOAPODS: 1.12.0

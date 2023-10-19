@@ -1,0 +1,8 @@
+Target dependency graph (4 targets)
+RTPod-Resources in Pods, no dependencies
+RTPod in Pods, depends on:
+RTPod-Resources in Pods (explicit)
+Pods-RTPod_Example in Pods, depends on:
+RTPod in Pods (explicit)
+Pods-RTPod_Tests in Pods, depends on:
+Pods-RTPod_Example in Pods (explicit)
