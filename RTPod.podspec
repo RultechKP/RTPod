@@ -31,13 +31,23 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
   
   s.source_files = 'RTPod/Classes/**/*'
+  s.source_files = 'RTPod/Classes/BaseClasses/**/*'
+  s.source_files = 'RTPod/Classes/GlobalControls/**/*'
+  s.source_files = 'RTPod/Classes/Extensions/**/*'
+  
   s.resource_bundles = {
     'Resources' => ['RTPod/Assets/star.png']
   }
   s.dependency 'Alamofire', '~> 5.8.0'
   s.dependency 'Toast-Swift', '~> 5.0.1'
   s.dependency 'ReachabilitySwift', '~> 5.0.0'
-
+  s.dependency 'KRProgressHUD', '~> 3.4.7'
+  s.dependency 'Mute', '~> 0.6.1'
+  s.dependency 'SDWebImage', '~> 5.18.3'
+  s.dependency 'IQKeyboardManagerSwift', '~> 6.2.1'
+  s.dependency 'DropDown', '~> 2.3.13'
+  s.dependency 'SlideMenuControllerSwift', '~> 4.0.0.0'
+  
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   #   s.dependency 'AFNetworking', '~> 2.3'
