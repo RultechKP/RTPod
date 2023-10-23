@@ -31,6 +31,9 @@
     ],
     "Toast-Swift": [
       "~> 5.0.1"
+    ],
+    "ReachabilitySwift": [
+      "~> 5.0.0"
     ]
   },
   "swift_version": "5.0"

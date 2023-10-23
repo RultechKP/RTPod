@@ -36,7 +36,8 @@ Pod::Spec.new do |s|
   }
   s.dependency 'Alamofire', '~> 5.8.0'
   s.dependency 'Toast-Swift', '~> 5.0.1'
-  
+  s.dependency 'ReachabilitySwift', '~> 5.0.0'
+
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   #   s.dependency 'AFNetworking', '~> 2.3'

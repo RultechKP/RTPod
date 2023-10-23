@@ -1,17 +1,19 @@
 PODS:
   - Alamofire (5.8.0)
+  - ReachabilitySwift (5.0.0)
   - RTPod (0.1.0):
     - Alamofire (~> 5.8.0)
+    - ReachabilitySwift (~> 5.0.0)
     - Toast-Swift (~> 5.0.1)
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
-  - Alamofire
   - RTPod (from `../`)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - ReachabilitySwift
     - Toast-Swift
 
 EXTERNAL SOURCES:
@@ -20,9 +22,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 0e92e751b3e9e66d7982db43919d01f313b8eb91
-  RTPod: 0d35d40d72571543d708320276bffd0998ab07af
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  RTPod: 56b4941d6c4c9c910c704a560086cea7f6f4653c
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: da7b6c09a473f9263572b2d24c323f34a171822b
+PODFILE CHECKSUM: e83cec4e7109d97d231e87150824bed1f6cd35dc
 
 COCOAPODS: 1.12.0
