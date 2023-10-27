@@ -12,13 +12,20 @@ import KRProgressHUD
 import Alamofire
 
 
-class BaseAPIClass {
+public class BaseAPIClass {
     
-    static let instance = BaseAPIClass()
+    public init(){}
+
+   public static let instance = BaseAPIClass()
+   
     //***************************************
     // MARK: - Post Webservice call
     //***************************************
-    func callService(method : HTTPMethod, url: String, param: [String:AnyObject] = [:], isShowHud: Bool = true,isuseheader: Bool = false, onSuccess: @escaping([String:AnyObject]) -> Void, onFailure: @escaping(String) -> Void)
+public func kpTest() -> String{
+        return "BaseClass Function called"
+    }
+    
+    public func callService(method : HTTPMethod, url: String, param: [String:AnyObject] = [:], isShowHud: Bool = true,isuseheader: Bool = false, onSuccess: @escaping([String:AnyObject]) -> Void, onFailure: @escaping(String) -> Void)
     {
         if isShowHud
         {
@@ -108,7 +115,7 @@ class BaseAPIClass {
         }
     }
     
-    func callGETService(method : HTTPMethod, url: String, param: [String:AnyObject] = [:], isShowHud: Bool = true,isuseheader: Bool = false ,onSuccess: @escaping([String:AnyObject]) -> Void, onFailure: @escaping(String) -> Void)
+    public func callGETService(method : HTTPMethod, url: String, param: [String:AnyObject] = [:], isShowHud: Bool = true,isuseheader: Bool = false ,onSuccess: @escaping([String:AnyObject]) -> Void, onFailure: @escaping(String) -> Void)
     {
         
         if isShowHud
@@ -179,7 +186,7 @@ class BaseAPIClass {
         }
     }
     
-    func callUploadService(audioType : String = "",fileName : String = "",image : UIImage = UIImage(),audioUrl : URL = URL(fileURLWithPath: ""), url: String, param: [String:AnyObject] = [:], isShowHud: Bool = true,isProfilePicUpload : Bool = false,isFullAudioUpload : Bool = false,isMusicCoverPhotoUpload : Bool = false, onSuccess: @escaping([String:AnyObject]) -> Void, onFailure: @escaping(String) -> Void)
+    public  func callUploadService(audioType : String = "",fileName : String = "",image : UIImage = UIImage(),audioUrl : URL = URL(fileURLWithPath: ""), url: String, param: [String:AnyObject] = [:], isShowHud: Bool = true,isProfilePicUpload : Bool = false,isFullAudioUpload : Bool = false,isMusicCoverPhotoUpload : Bool = false, onSuccess: @escaping([String:AnyObject]) -> Void, onFailure: @escaping(String) -> Void)
     {
         
         if isShowHud{
@@ -264,7 +271,7 @@ class BaseAPIClass {
         }
     }
     
-    func convertToDictionary(text: String) -> [String: Any]? {
+    public  func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {
                 return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
@@ -275,7 +282,7 @@ class BaseAPIClass {
         return nil
     }
     
-    func callUploadServiceEditProfile(audioType : String = "",fileName : String = "",image : UIImage = UIImage(),bio : String,userID : Int,audioUrl : URL = URL(fileURLWithPath: ""), url: String, param: [String:AnyObject] = [:], isShowHud: Bool = true,isProfilePicUpload : Bool = false,isFullAudioUpload : Bool = false,isMusicCoverPhotoUpload : Bool = false, onSuccess: @escaping([String:AnyObject]) -> Void, onFailure: @escaping(String) -> Void)
+    public func callUploadServiceEditProfile(audioType : String = "",fileName : String = "",image : UIImage = UIImage(),bio : String,userID : Int,audioUrl : URL = URL(fileURLWithPath: ""), url: String, param: [String:AnyObject] = [:], isShowHud: Bool = true,isProfilePicUpload : Bool = false,isFullAudioUpload : Bool = false,isMusicCoverPhotoUpload : Bool = false, onSuccess: @escaping([String:AnyObject]) -> Void, onFailure: @escaping(String) -> Void)
     {
         let parametersPAss = ["bio":bio,"user_id":String(userID)] as [String : AnyObject]
         
@@ -370,4 +377,12 @@ struct GlobalTexts {
     static let serverSideFailureMessage = "Something went wrong! Please try again later."
     static let dataNotFound = "Data not found"
     static let noInternet = "No Internet"
+    static let goToSettings = Locale.localize("goToSettings")
+    static let cameraAccessDenied = Locale.localize("cameraAccessDenied")
+    static let error = Locale.localize("error")
+    static let chooseFrom = Locale.localize("chooseFrom")
+    static let camera = Locale.localize("camera")
+    static let cameraNotAvailable = Locale.localize("cameraNotAvailable")
+    static let photos = Locale.localize("photos")
+    static let others = Locale.localize("others")
 }

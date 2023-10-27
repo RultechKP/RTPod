@@ -15,8 +15,6 @@ Pod::Spec.new do |s|
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
-  #   * Finally, don't worry about the indent, CocoaPods strips it!
-  
   s.description      = <<-DESC
   TODO: Add long description of the pod here.
   DESC
@@ -31,9 +29,9 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
   
   s.source_files = 'RTPod/Classes/**/*'
-  s.source_files = 'RTPod/Classes/BaseClasses/**/*'
-  s.source_files = 'RTPod/Classes/GlobalControls/**/*'
-  s.source_files = 'RTPod/Classes/Extensions/**/*'
+#  s.source_files = 'RTPod/Classes/BaseClasses/**/*'
+#  s.source_files = 'RTPod/Classes/GlobalControls/**/*'
+#  s.source_files = 'RTPod/Classes/Extensions/**/*'
   
   s.resource_bundles = {
     'Resources' => ['RTPod/Assets/star.png']

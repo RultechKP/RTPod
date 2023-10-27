@@ -9,6 +9,8 @@ import UIKit
 import AVKit
 import Reachability
 import Mute
+import Toast_Swift
+import IQKeyboardManagerSwift
 
 class GlobalBaseVC: UIViewController,UITextFieldDelegate{
     
@@ -79,71 +81,71 @@ class GlobalBaseVC: UIViewController,UITextFieldDelegate{
     }
     
     func checkAppNeedsUpdate() {
-        let infoDictionary = Bundle.main.infoDictionary
-        let url = URL(string: "http://itunes.apple.com/lookup?bundleId=com.adezinesdev.techmeanings")!
-        //"http://itunes.apple.com/lookup?bundleId=com.electra.littlepesa&country=ke"
-        
-        guard let data = try? Data(contentsOf: url) else {
-          print("There is an error!")
-          return ;
-        }
-        let lookup = (try? JSONSerialization.jsonObject(with: data , options: [])) as? [String: Any]
-        if let resultCount = lookup!["resultCount"] as? Int, resultCount == 1 {
-            if let results = lookup!["results"] as? [[String:Any]] {
-                if let appStoreVersion = results[0]["version"] as? String{
-                    appDelegate.appLatestStoreVersion = appStoreVersion
-                    var currentVersion = ""
-                    if let currentVersion1 = infoDictionary!["CFBundleShortVersionString"] as? String{
-                        currentVersion = currentVersion1
-                    }
-                    let versionCompare = currentVersion.compare(appStoreVersion, options: .numeric)
-                    //userCurrentVersion = 1.0
-                    //appStoreLatestVersion = 4.1.0
-                    let firstNumberFromCurrentVersion = Int(currentVersion[0]) ?? 0//1
-                    let firstNumberAppstoreLatestVersion = Int(appStoreVersion[0]) ?? 0//4
-                    
-                    if firstNumberFromCurrentVersion < firstNumberAppstoreLatestVersion{
-                        //1<4
-                        //update force
-                        showUpdateAlert(forceUpdate: true)
-                        return
-                    }
-                    
-                    if versionCompare == .orderedAscending {
-                        print("user having older than version")
-                        print("Need to update [\(appStoreVersion) != \(currentVersion)]")
-                        showUpdateAlert(forceUpdate: false)
-                        return
-                    }
-                }
-            }
-        }
+//        let infoDictionary = Bundle.main.infoDictionary
+//        let url = URL(string: "http://itunes.apple.com/lookup?bundleId=com.adezinesdev.techmeanings")!
+//        //"http://itunes.apple.com/lookup?bundleId=com.electra.littlepesa&country=ke"
+//
+//        guard let data = try? Data(contentsOf: url) else {
+//          print("There is an error!")
+//          return ;
+//        }
+//        let lookup = (try? JSONSerialization.jsonObject(with: data , options: [])) as? [String: Any]
+//        if let resultCount = lookup!["resultCount"] as? Int, resultCount == 1 {
+//            if let results = lookup!["results"] as? [[String:Any]] {
+//                if let appStoreVersion = results[0]["version"] as? String{
+//                    appDelegate.appLatestStoreVersion = appStoreVersion
+//                    var currentVersion = ""
+//                    if let currentVersion1 = infoDictionary!["CFBundleShortVersionString"] as? String{
+//                        currentVersion = currentVersion1
+//                    }
+//                    let versionCompare = currentVersion.compare(appStoreVersion, options: .numeric)
+//                    //userCurrentVersion = 1.0
+//                    //appStoreLatestVersion = 4.1.0
+//                    let firstNumberFromCurrentVersion = Int(currentVersion[0]) ?? 0//1
+//                    let firstNumberAppstoreLatestVersion = Int(appStoreVersion[0]) ?? 0//4
+//
+//                    if firstNumberFromCurrentVersion < firstNumberAppstoreLatestVersion{
+//                        //1<4
+//                        //update force
+//                        showUpdateAlert(forceUpdate: true)
+//                        return
+//                    }
+//
+//                    if versionCompare == .orderedAscending {
+//                        print("user having older than version")
+//                        print("Need to update [\(appStoreVersion) != \(currentVersion)]")
+//                        showUpdateAlert(forceUpdate: false)
+//                        return
+//                    }
+//                }
+//            }
+//        }
         return
     }
     
     func showUpdateAlert(forceUpdate : Bool){
-        let alertMessage = "A new version of TechMeanings is available,Please update to version " + appDelegate.appLatestStoreVersion;
-        let alert = UIAlertController(title: "New Version Available", message: alertMessage, preferredStyle: UIAlertController.Style.alert)
-        
-        let okBtn = UIAlertAction(title: "Update Now", style: .default, handler: {(_ action: UIAlertAction) -> Void in
-            if let url = URL(string:"https://apps.apple.com/app/techmeanings-dictionary/id6449478547"),
-               UIApplication.shared.canOpenURL(url){
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                } else {
-                    UIApplication.shared.openURL(url)
-                }
-            }
-        })
-        
-        let laterBtn = UIAlertAction(title: "Update Later", style: .default, handler: {(_ action: UIAlertAction) -> Void in
-            alert.dismiss(animated: false)
-        })
-        alert.addAction(okBtn)
-        if !forceUpdate{
-            alert.addAction(laterBtn)
-        }
-        self.present(alert, animated: true)
+//        let alertMessage = "A new version of TechMeanings is available,Please update to version " + appDelegate.appLatestStoreVersion;
+//        let alert = UIAlertController(title: "New Version Available", message: alertMessage, preferredStyle: UIAlertController.Style.alert)
+//
+//        let okBtn = UIAlertAction(title: "Update Now", style: .default, handler: {(_ action: UIAlertAction) -> Void in
+//            if let url = URL(string:"https://apps.apple.com/app/techmeanings-dictionary/id6449478547"),
+//               UIApplication.shared.canOpenURL(url){
+//                if #available(iOS 10.0, *) {
+//                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//                } else {
+//                    UIApplication.shared.openURL(url)
+//                }
+//            }
+//        })
+//
+//        let laterBtn = UIAlertAction(title: "Update Later", style: .default, handler: {(_ action: UIAlertAction) -> Void in
+//            alert.dismiss(animated: false)
+//        })
+//        alert.addAction(okBtn)
+//        if !forceUpdate{
+//            alert.addAction(laterBtn)
+//        }
+//        self.present(alert, animated: true)
     }
     
     func convertToJSONString(value: [Int]) -> String? {
@@ -188,14 +190,14 @@ class GlobalBaseVC: UIViewController,UITextFieldDelegate{
     }
     
     func shareDetails(msg : String, subjectId: String, wordId: String){
-        let text = "TechMeanings\n" + APIBaseUrl.rultechShare + "/app?subject_id=\(subjectId)&word_id=\(wordId)" + "\n\n" + msg//Android AppLink:\n https://play.google.com/store/apps/details?id=com.techmeaningsandroidapp" + "\n" + "iOS AppLink:\n https://apps.apple.com/us/app/techmeanings-dictionary/id6449478547" + "\n\n" + msg
-
-        let textShare = [ text ]
-        let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view
-        //        activityViewController.completionWithItemsHandler = { activity, completed, items, error in
-        //        }
-        self.present(activityViewController, animated: true, completion: nil)
+//        let text = "TechMeanings\n" + APIBaseUrl.rultechShare + "/app?subject_id=\(subjectId)&word_id=\(wordId)" + "\n\n" + msg//Android AppLink:\n https://play.google.com/store/apps/details?id=com.techmeaningsandroidapp" + "\n" + "iOS AppLink:\n https://apps.apple.com/us/app/techmeanings-dictionary/id6449478547" + "\n\n" + msg
+//
+//        let textShare = [ text ]
+//        let activityViewController = UIActivityViewController(activityItems: textShare , applicationActivities: nil)
+//        activityViewController.popoverPresentationController?.sourceView = self.view
+//        //        activityViewController.completionWithItemsHandler = { activity, completed, items, error in
+//        //        }
+//        self.present(activityViewController, animated: true, completion: nil)
     }
     
     func defaultMenuImage() -> UIImage {
@@ -280,7 +282,7 @@ class GlobalBaseVC: UIViewController,UITextFieldDelegate{
                 })
             }
         })
-        alertController.addAction(UIAlertAction(title: GlobalTexts.cancel, style: .default))
+        alertController.addAction(UIAlertAction(title: "cancel", style: .default))
         
         present(alertController, animated: true)
     }
@@ -302,7 +304,7 @@ class GlobalBaseVC: UIViewController,UITextFieldDelegate{
         //        }
         let windows = UIApplication.shared.windows
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            windows.last?.makeToast(message, duration: toastDuration, position: .bottom,image : img, style: style, isImageContain: false)
+            windows.last?.makeToast(message, duration: toastDuration, position: .bottom,image : img, style: style)//, isImageContain: false)
             windows.last?.makeKeyAndVisible()
         }
     }
@@ -422,4 +424,10 @@ extension String {
         let end = index(start, offsetBy: range.upperBound - range.lowerBound)
         return String(self[start ..< end])
     }
+}
+//***************************************
+// MARK: - User's Device keyboard height
+//***************************************
+struct Keyboard{
+    static var height = 0.0
 }

@@ -19,7 +19,7 @@
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "RTPod/Classes/Extensions/**/*",
+  "source_files": "RTPod/Classes/**/*",
   "resource_bundles": {
     "Resources": [
       "RTPod/Assets/star.png"

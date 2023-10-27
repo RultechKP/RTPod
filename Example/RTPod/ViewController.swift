@@ -21,11 +21,13 @@ class ViewController: UIViewController {
         let path = frameworkBundle.path(forResource: "Resources", ofType: "bundle")
         let resourcesBundle = Bundle(url: URL(fileURLWithPath: path!))
         let image = UIImage(named: "star.png", in: resourcesBundle, compatibleWith: nil)
-        BaseAPIClass.instance.callService(method: .post, url: "url", param: [String : String],isShowHud: false, onSuccess: { (resDict) in
-            onSuccess(resDict)
-        }) { (msg) in
-            onFailure(msg)
-        }
+//        let base = BaseAPIClass()
+        print(BaseAPIClass.instance.kpTest())
+//        BaseAPIClass.instance.callService(method: .post, url: "url", param: [String : String],isShowHud: false, onSuccess: { (resDict) in
+////            onSuccess(resDict)
+//        }) { (msg) in
+////            onFailure(msg)
+//        }
        
         print(image)
         // Do any additional setup after loading the view, typically from a nib.

@@ -95,6 +95,33 @@ class GlobalTextFieldLeftRightIcon : UITextField {
     }
 }
 
+//***************************************
+// MARK: - Global Colors Constants
+//***************************************
+struct CommonColors{
+    static let gradientLightColor = UIColorFromRGB(rgbValue: 0xadbcdb)
+    static let gradientDarkColor = UIColorFromRGB(rgbValue: 0x3754a2)
+    static let segmentBackgroundColor = UIColorFromRGB(rgbValue: 0x3754a2)
+    static let buttonBackgroundColor = UIColorFromRGB(rgbValue: 0x3754a2)
+    static let titleTextColor = UIColorFromRGB(rgbValue: 0x3754a2)
+    static let subjectTextColor = UIColorFromRGB(rgbValue: 0x009de0)
+}
+
+//***************************************
+// MARK: - Global Images Names Constants
+//***************************************
+struct GlobalIcons {
+    static let passwordEyeVisible = "passwordEyeInvisible"
+    static let passwordEyeInVisible = "passwordEyeVisible"
+    static let back = "arrowBack"
+    static let successToast = "toastSuccess"
+    static let failureToast = "toastFailure"
+    static let popUpBackground = "popUpBackground"
+    static let close = "close"
+    static let menu = "menu"
+    static let placeholder = "placeholder"
+}
+
 extension UITextField {
    
     func setCountryCodeLeftView(image: String = "") {
