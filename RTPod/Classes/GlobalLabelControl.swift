@@ -94,14 +94,14 @@ class GlobalLabelControl: UILabel {
     }
     
     //set time label
-//    func setRoundedBackgroundTimeLabel(title : String){
-//        self.text = title
-//        self.layer.cornerRadius = self.frame.height / 2
-//        self.layer.masksToBounds = true
-//        self.textColor = UIColor.white
-//        self.layer.backgroundColor = GlobalTimeDisplayLabelConstants.backgroundColor
-//        self.font = GlobalTimeDisplayLabelConstants.font
-//    }
+    //    func setRoundedBackgroundTimeLabel(title : String){
+    //        self.text = title
+    //        self.layer.cornerRadius = self.frame.height / 2
+    //        self.layer.masksToBounds = true
+    //        self.textColor = UIColor.white
+    //        self.layer.backgroundColor = GlobalTimeDisplayLabelConstants.backgroundColor
+    //        self.font = GlobalTimeDisplayLabelConstants.font
+    //    }
     
     //set rounded UILabel with border
     func setRoundedBorderedLabel(){
@@ -137,7 +137,7 @@ public func prominentCreationButton(color: UIColor) -> (UIButton) -> Void {
             UIImage(named: "Create")?.withRenderingMode(.alwaysTemplate),
             for: .normal
         )
-//        button.backgroundColor = color ? .init(0xe5e5e5) : .init(0x1b1b1b)
+        //        button.backgroundColor = color ? .init(0xe5e5e5) : .init(0x1b1b1b)
         button.tintColor = color
         button.layer.masksToBounds = false
         button.layer.shadowOpacity = 0.5

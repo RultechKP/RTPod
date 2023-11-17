@@ -17,10 +17,17 @@ class ViewController: UIViewController {
         let log = Logger()
         log.printLog()
 
-        let frameworkBundle = Bundle(for: Logger.self)
-        let path = frameworkBundle.path(forResource: "Resources", ofType: "bundle")
-        let resourcesBundle = Bundle(url: URL(fileURLWithPath: path!))
-        let image = UIImage(named: "star.png", in: resourcesBundle, compatibleWith: nil)
+//        let frameworkBundle = Bundle(for: Logger.self)
+//        let path = frameworkBundle.path(forResource: "Resources", ofType: "bundle")
+//        let resourcesBundle = Bundle(url: URL(fileURLWithPath: path!))
+//        let image = UIImage(named: "passwordEyeVisible", in: resourcesBundle, compatibleWith: nil)
+     
+        let img = UIImageView(image: UIImage(named: "star"))
+        img.backgroundColor = .lightGray
+        img.frame.size = CGSize(width: 100, height: 100)
+        self.view.addSubview(img)
+        
+//        let image = UIImage(named: "star.png", in: resourcesBundle, compatibleWith: nil)
 //        let base = BaseAPIClass()
         print(BaseAPIClass.instance.kpTest())
 //        BaseAPIClass.instance.callService(method: .post, url: "url", param: [String : String],isShowHud: false, onSuccess: { (resDict) in
@@ -29,7 +36,7 @@ class ViewController: UIViewController {
 ////            onFailure(msg)
 //        }
        
-        print(image)
+        print(img.image)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
